@@ -1,3 +1,23 @@
+# region HOMEMADE 
+def inverter(texto):
+    i = len(texto) - 1
+    texto_invertido = ""
+    while i >= 0:
+        texto_invertido += texto[i]  
+        i -= 1                       
+    return texto_invertido
+
+
+def tem(var,lista):
+    i = 0
+    while i < len(lista):
+        if var == lista[i]:
+            return True
+        else:
+            i += 1
+               
+#endregion 
+# region exercicios
 def gerarlista(var):
     i = 0 
     lista = []
@@ -5,21 +25,25 @@ def gerarlista(var):
         lista.append(var[i])
         i += 1
     return lista
-
 def vogcon(var):
-    lista = []
+    listo = ["a","e","i","o","u"]
+    ba = []
     vog = ""
     con = ""
     i = 0 
+    nada = 0
     while i < len(var):
-        if var[i] == "a" or var[i] == "e" or var[i] == "i" or var[i] == "o" or var[i] == "u":
+        if tem(var[i],listo) == True:
             vog = vog + var[i]
+        
+        elif var[i] == " ":
+            nada += 1
         else:
             con = con + var[i]
         i += 1
-    lista.append(vog)
-    lista.append(con)
-    return lista
+    ba.append(vog)
+    ba.append(con)
+    return ba
 
 
 """3 leia um string e retorne uma lista de letras que se repetem continuamente ex: abbacaxi - - > [b]"""
@@ -46,23 +70,22 @@ def numeros(var):
         i += 1
     return inverter(newVar)
 
-def inverter(texto):
-    i = len(texto) - 1
-    texto_invertido = ""
-    while i >= 0:
-        texto_invertido += texto[i]  
-        i -= 1                       
-    return texto_invertido
-
-def tem():
-    s
-    
 """5 crie uma função "substitui(texto,original,troca)"
 esta funcao le a string texto e troca todos as ocorrencias do caractere original e troca pelo caractere troca 
 retorne o texto alterado"""
 
 def substitui(texto,original,troca):
     i = 0
+    novoTexto = ""
     while i < len(texto):
+        if tem(texto[i],original) == True:
+            novoTexto += troca
+            
+        else:
+            novoTexto += texto[i]
+        i += 1
+    return novoTexto
 
-        return
+# endregion
+
+
