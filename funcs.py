@@ -85,6 +85,21 @@ def substitui(texto,original,troca):
             novoTexto += texto[i]
         i += 1
     return novoTexto
+def substitui2(texto, original, troca):
+    i = 0
+    novoTexto = ""
+    tamanho = len(original)
+    while i < len(texto):
+        if texto[i : i + tamanho] == original:  
+            novoTexto += troca  
+            i += tamanho  
+        else:
+            novoTexto += texto[i]
+            i += 1
+    return novoTexto
+
+
+
 
 # endregion
 
